@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Summary</title>
+    <style>
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .container {
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="row">
+        <div class="container">
+            <h2>Top Scorers by Subject</h2>
+            <img src="{{ url_for('static', filename='charts/bar_chart.png') }}" alt="Top Scorers by Subject">
+        </div>
+        <div class="container">
+            <h2>User Attempts by Subject</h2>
+            <img src="{{ url_for('static', filename='charts/pie_chart.png') }}" alt="User Attempts by Subject">
+        </div>
+    </div>    
+</body>
+</html>
