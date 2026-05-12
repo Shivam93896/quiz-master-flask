@@ -7,6 +7,10 @@ import matplotlib
 matplotlib.use('Agg')
 import os 
 from werkzeug.security import generate_password_hash, check_password_hash
+from pyngrok import ngrok
+
+
+
 
 
 def create_app():
@@ -448,10 +452,11 @@ def unblock_user(user_id):
     
     return redirect(url_for('user_manage'))
    
+if __name__ == "__main__":
+    public_url = ngrok.connect(5000)
+    print("Public URL:", public_url)
+    app.run(debug=False, use_reloader=False)
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
 
 
 
